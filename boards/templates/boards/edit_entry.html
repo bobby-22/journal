@@ -1,0 +1,14 @@
+{% extends "boards/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<form action="{% url 'boards:edit_entry' entry.id %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button class="btn btn-primary">Add entry</button>
+    {% endbuttons %}
+</form>
+
+{% endblock content %}

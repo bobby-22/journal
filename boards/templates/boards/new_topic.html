@@ -1,0 +1,14 @@
+{% extends "boards/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<form action="{% url 'boards:new_topic' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button class="btn btn-md btn-primary">Add topic</button>
+    {% endbuttons %}
+</form>
+
+{% endblock content %}

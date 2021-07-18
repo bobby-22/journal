@@ -1,0 +1,15 @@
+{% extends "boards/base.html" %}
+{% load bootstrap_icons %}
+
+{% block page_header %}
+
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Journal</h1>
+    <p class="lead">Here you can write down your ideas. Use it to track your project or just for fun, there is no limit {% bs_icon 'emoji-smile' %}.</p>
+    {% if user.is_authenticated == 0 %}
+        <p>To view your topics and entries, please login or register a new account.</p>
+        <a class="btn btn-primary" href="{% url 'users:register' %}">Register</a>
+    {% endif %}
+</div>
+
+{% endblock page_header %}

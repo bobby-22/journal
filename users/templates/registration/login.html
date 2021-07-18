@@ -1,0 +1,19 @@
+{% extends "boards/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+<h3>Login</h3>
+{% endblock page_header %}
+
+{% block content %}
+
+<form class="border-top pt-2" method="POST" action="{% url 'users:login' %}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button class="btn btn-primary">Log in</button>
+    {% endbuttons %}
+    <input type="hidden" name="next" value="{% url 'boards:index' %}">
+</form>
+
+{% endblock content %}
