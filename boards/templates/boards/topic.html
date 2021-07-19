@@ -4,7 +4,7 @@
 {% block page_header %}
 
 <div class="d-flex justify-content-between align-items-center">
-    <h3>{{ topic }}</h3>
+    <h3 style="margin-bottom: 0;">{{ topic }}</h3>
     <a href="{% url 'boards:new_entry' topic.id %}">{% bs_icon 'plus-square' size='2em' %}</a>
 </div>
 
@@ -15,7 +15,7 @@
 {% for entry in entries %}
     <div class="card mb-3">
         <div class="card-header d-flex align-items-center">
-                <h5>{{ entry.date_added|date:'M d, Y H:i' }}</h5>
+                <h5 style="margin-bottom: 0;">{{ entry.date_added|date:'M d, Y H:i' }}</h5>
                 <a class="ml-auto text-secondary" href="{% url 'boards:edit_entry' entry.id %}">{% bs_icon 'pencil-square' size="1.5em" %}</a>
                 <a class="ml-2 text-secondary" href="{% url 'boards:delete_entry' entry.id %}">{% bs_icon 'trash' size="1.5em" %}</a>
         </div>
