@@ -1,7 +1,7 @@
 *.pyc
 __pycache__
 
-b_env
+j_env
 
 db.sqlite3
 
